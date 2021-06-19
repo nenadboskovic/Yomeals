@@ -30,11 +30,11 @@ public class LocationPopupPage extends BasicPage {
 	}
 	
 	public WebElement getLocationInput() {
-		return this.driver.findElement(By.xpath("//*[@id='location_id']"));
+		return this.driver.findElement(By.id("location_id"));
 	}
 	
 	public WebElement getSubmit() {
-		return this.driver.findElement(By.xpath("//*[@name='btn_submit']"));
+		return this.driver.findElement(By.name("btn_submit"));
 	}
 	
 	public void getLocationForm() {
@@ -43,17 +43,17 @@ public class LocationPopupPage extends BasicPage {
 	
 	public void setLocation(String locationName) throws InterruptedException {
 		this.getKeyword().click();
-		Thread.sleep(1500);
+		Thread.sleep(500);
 
 		String dataValue = this.getLocationItem(locationName).getAttribute("data-value");
-		Thread.sleep(1500);
+		Thread.sleep(500);
 		javascriptExecutor = (JavascriptExecutor) driver;
 		javascriptExecutor.executeScript("arguments[0].value=arguments[1]", this.getLocationInput(), dataValue);
-		Thread.sleep(1500);
+		Thread.sleep(500);
 		javascriptExecutor.executeScript("arguments[0].click();", this.getSubmit());
 	}
 
-	public void getClosePopup() {
+	public void closePopup() {
 		this.getCloseBtn().click();
 	}
 	

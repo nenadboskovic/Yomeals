@@ -10,17 +10,11 @@ public class SearchTest extends BasicTest {
 //	
 //	}
 	
-//	public void searchResultTest() throws InterruptedException {
-//		this.driver.get("http://demo.yo-meals.com/");
-////		locationPopupPage.setLocation(locationName);
-//		Thread.sleep(500);
-//
-//		locationPopupPage.getClosePopup();
-//		Thread.sleep(500);
-//
-//		locationPopupPage.getLocationForm();
-//		Thread.sleep(1500);
-//		locationPopupPage.setLocation("Burlington");
+	public void searchResultTest() throws InterruptedException {
+		this.driver.get(baseUrl + "/guest-user/login-form");
+		Thread.sleep(500);
+		locationPopupPage.closePopup();
+		loginPage.login(email, password);
 	}
 
 }

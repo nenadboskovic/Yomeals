@@ -57,9 +57,11 @@ public abstract class BasicTest {
 		profilePage = new ProfilePage(driver, javascriptExecutor, waiter);
 		searchResultPage = new SearchResultPage(driver, javascriptExecutor, waiter);
 
-		email = "customer@dummyid.com";
-		password = "12345678a";
-		baseUrl = "http://demo.yo-meals.com/";
+		this.email = "customer@dummyid.com";
+		this.password = "12345678a";
+		this.baseUrl = "http://demo.yo-meals.com/";
+		this.javascriptExecutor = (JavascriptExecutor) driver;
+		this.waiter = new WebDriverWait(driver, 5, 500);
 	}
 	
 	@AfterMethod
