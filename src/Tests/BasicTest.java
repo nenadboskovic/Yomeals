@@ -43,6 +43,7 @@ public abstract class BasicTest {
 	public void setup() {
 		System.setProperty("webdriver.chrome.driver", "driver-lib\\chromedriver.exe");
 		driver = new ChromeDriver();
+		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
@@ -58,12 +59,12 @@ public abstract class BasicTest {
 
 		email = "customer@dummyid.com";
 		password = "12345678a";
-		
+		baseUrl = "http://demo.yo-meals.com/";
 	}
 	
 	@AfterMethod
 	public void cleanup() throws InterruptedException {
 		Thread.sleep(2500);
-		this.driver.quit();
+	//	this.driver.quit();
 	}
 }
