@@ -43,6 +43,8 @@ public abstract class BasicTest {
 	public void setup() {
 		System.setProperty("webdriver.chrome.driver", "driver-lib\\chromedriver.exe");
 		driver = new ChromeDriver();
+		javascriptExecutor = (JavascriptExecutor) driver;
+		waiter = new WebDriverWait(driver, 5, 500);
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -60,8 +62,7 @@ public abstract class BasicTest {
 		this.email = "customer@dummyid.com";
 		this.password = "12345678a";
 		this.baseUrl = "http://demo.yo-meals.com/";
-		this.javascriptExecutor = (JavascriptExecutor) driver;
-		this.waiter = new WebDriverWait(driver, 5, 500);
+
 	}
 	
 	@AfterMethod
