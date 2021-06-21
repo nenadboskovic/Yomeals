@@ -10,11 +10,15 @@ public class SearchTest extends BasicTest {
 //	
 //	}
 	
+
 	public void searchResultTest() throws InterruptedException {
 		this.driver.get(baseUrl + "/guest-user/login-form");
 		Thread.sleep(500);
 		locationPopupPage.closePopup();
 		loginPage.login(email, password);
+		Thread.sleep(500);
+		authPage.logout();
+		System.out.println(notificationSistemPage.getMessageText());
 	}
-
+	
 }

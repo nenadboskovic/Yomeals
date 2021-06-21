@@ -90,19 +90,28 @@ public class ProfilePage extends BasicPage {
 	}
 	
 	public void RemoveProfilePic() {
-//		javascriptExecutor = (JavascriptExecutor) driver;
+		javascriptExecutor = (JavascriptExecutor) driver;
 		javascriptExecutor.executeScript("arguments[0].click();", this.getRemoveProfilePic());
 	}
 	
 	public void ChangePersonalInfo (String firstName,
 									String lastName,
 									String email,
-									String adress,
+									String address,
 									String phoneNo,
 									String zipCode,
 									String country,
-									String
-									) {
+									String state,
+									String city) {
+		this.getFirstName().sendKeys(firstName);
+		this.getLastName().sendKeys(lastName);
+		this.getEmail().sendKeys(email);
+		this.getAddress().sendKeys(address);
+		this.getPhoneNo().sendKeys(phoneNo);
+		this.getZipCode().sendKeys(zipCode);
+		this.getCountry().selectByValue(country);
+		this.getState().selectByValue(state);
+		this.getCity().selectByValue(city);
 		
 	}
 	
