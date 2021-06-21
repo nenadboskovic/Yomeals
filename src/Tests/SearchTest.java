@@ -15,10 +15,14 @@ public class SearchTest extends BasicTest {
 		this.driver.get(baseUrl + "/guest-user/login-form");
 		Thread.sleep(500);
 		locationPopupPage.closePopup();
-		loginPage.login(email, password);
-		Thread.sleep(500);
-		authPage.logout();
-		System.out.println(notificationSistemPage.getMessageText());
+		mealPage.selectMeal("Tom Yum Soup");
+		
+		mealPage.addMeal("2");
+//		mealPage.getMealsSign().click();
+//		loginPage.login(email, password);
+//		Thread.sleep(500);
+//		authPage.logout();
+//		System.out.println(notificationSistemPage.getMessageText());
 	}
 	
 }
