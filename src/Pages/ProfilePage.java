@@ -96,24 +96,29 @@ public class ProfilePage extends BasicPage {
 	
 	public void ChangePersonalInfo (String firstName,
 									String lastName,
-									String email,
 									String address,
 									String phoneNo,
 									String zipCode,
 									String country,
 									String state,
 									String city) throws InterruptedException {
+		this.getFirstName().clear();
 		this.getFirstName().sendKeys(firstName);
+		this.getLastName().clear();
 		this.getLastName().sendKeys(lastName);
-		this.getEmail().sendKeys(email);
+		this.getAddress().clear();
 		this.getAddress().sendKeys(address);
+		this.getPhoneNo().clear();
 		this.getPhoneNo().sendKeys(phoneNo);
+		this.getZipCode().clear();
 		this.getZipCode().sendKeys(zipCode);
-		this.getCountry().selectByValue(country);
-		Thread.sleep(1500);
-		this.getState().selectByValue(state);
-		Thread.sleep(1500);
-		this.getCity().selectByValue(city);
+		this.getCountry().selectByVisibleText(country);
+		Thread.sleep(500);
+		this.getState().selectByVisibleText(state);
+		Thread.sleep(500);
+		this.getCity().selectByVisibleText(city);
+		Thread.sleep(500);
+		this.getGeneralSaveBtn().click();
 		
 	}
 	

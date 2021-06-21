@@ -17,14 +17,15 @@ public class SearchResultPage extends BasicPage{
 	}
 
 	public List<WebElement> getSearchResults() {
-		List<WebElement> resultLinks = driver.findElements(By.xpath("//*[@class='product-name']/a"));
+		List<WebElement> resultLinks = driver.findElements(By.xpath("//*[@class='featured-img']/a"));
 		return resultLinks;
 	}
 	
 	public ArrayList<String> getSearchResultsText() {
 		ArrayList<String> textList = new ArrayList<String>();
 		for (int i = 0; i < this.getSearchResults().size(); i++) {
-			textList.add(this.getSearchResults().get(i).getText());
+			textList.add(this.getSearchResults().get(i).getAttribute("href"));
+	//		System.out.println(getSearchResults().get(i).getAttribute("href"));
 		}
 		return textList;
 	}
