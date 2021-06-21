@@ -102,7 +102,7 @@ public class ProfilePage extends BasicPage {
 									String zipCode,
 									String country,
 									String state,
-									String city) {
+									String city) throws InterruptedException {
 		this.getFirstName().sendKeys(firstName);
 		this.getLastName().sendKeys(lastName);
 		this.getEmail().sendKeys(email);
@@ -110,7 +110,9 @@ public class ProfilePage extends BasicPage {
 		this.getPhoneNo().sendKeys(phoneNo);
 		this.getZipCode().sendKeys(zipCode);
 		this.getCountry().selectByValue(country);
+		Thread.sleep(1500);
 		this.getState().selectByValue(state);
+		Thread.sleep(1500);
 		this.getCity().selectByValue(city);
 		
 	}

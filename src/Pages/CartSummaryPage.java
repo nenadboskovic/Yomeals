@@ -1,7 +1,9 @@
 package Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CartSummaryPage extends BasicPage {
@@ -10,5 +12,13 @@ public class CartSummaryPage extends BasicPage {
 		super(driver, javascriptExecutor, waiter);
 	}
 
+	public WebElement getClearAllBtn() {
+		return this.driver.findElement(By.xpath("//*[@class='cart-head']/a[2]"));
+	}
+	
+	public void ClearCart() {
+		this.getClearAllBtn().click();
+	}
+	
 }
 
