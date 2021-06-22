@@ -70,7 +70,7 @@ public abstract class BasicTest {
 
 		this.email = "customer@dummyid.com";
 		this.password = "12345678a";
-		this.baseUrl = "http://demo.yo-meals.com/";
+		this.baseUrl = "http://demo.yo-meals.com";
 
 	}
 	
@@ -83,7 +83,7 @@ public abstract class BasicTest {
 			
 			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			FileHandler.copy(scrFile, new File("./screenshots/" + time + ".png"));
-	//		FileUtils.copyFile(scrFile, new File("./screenshots/" + time + ".png"));
+
 		}
 		
 		Thread.sleep(2500);

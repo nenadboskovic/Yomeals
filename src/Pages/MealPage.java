@@ -25,7 +25,6 @@ public class MealPage extends BasicPage {
 	public void searchMeals(String meal) {
 		this.getMealsSearch().sendKeys(meal);
 		this.getMealsSearch().sendKeys(Keys.ENTER);
-
 	}
 
 	public void confirmMeal() {
