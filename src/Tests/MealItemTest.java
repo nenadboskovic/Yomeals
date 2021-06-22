@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class MealItemTest extends BasicTest {
 
-	@Test (priority = 1)
+//	@Test (priority = 1)
 	public void addMealToCartTest() throws InterruptedException {
 		driver.get(baseUrl + "/meal/lobster-shrimp-chicken-quesadilla-combo");
 		Thread.sleep(500);
@@ -22,15 +22,24 @@ public class MealItemTest extends BasicTest {
 
 	}
 	
-//	@Test (priority = 2)
-	public void addMealToFavoriteTest() {
-		this.driver.get("http://demo.yo-meals.com/");
-	
+	@Test (priority = 2)
+	public void addMealToFavoriteTest() throws InterruptedException {
+		driver.get(baseUrl + "/meal/lobster-shrimp-chicken-quesadilla-combo");
+		Thread.sleep(500);
+		locationPopupPage.closePopup();
+		mealPage.setFavourite();
+		Assert.assertTrue(notificationSistemPage.getMessageText().contains("Please login first!"), "Login notifcation ERROR");
+		loginPage.getLoginPage();
+		loginPage.login(email, password);
+		driver.get(baseUrl + "/meal/lobster-shrimp-chicken-quesadilla-combo");
+		mealPage.setFavourite();
+		Assert.assertTrue(notificationSistemPage.getMessageText().contains("Product has been added to your favorites."), "Add meal ERROR");
+
 	}
 	
 //	@Test (priority = 3)
 	public void clearCartTest() {
-		this.driver.get("http://demo.yo-meals.com/");
+		driver.get(baseUrl + "");
 	
 	}
 }

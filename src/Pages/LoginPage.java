@@ -11,7 +11,11 @@ public class LoginPage extends BasicPage {
 	public LoginPage(WebDriver driver, JavascriptExecutor javascriptExecutor, WebDriverWait waiter) {
 		super(driver, javascriptExecutor, waiter);
 	}
-
+	
+	public void getLoginPage() {
+		this.driver.findElement(By.linkText("Login")).click();
+	}
+	
 	public WebElement getEmail() {
 		return this.driver.findElement(By.name("username"));
 	}
