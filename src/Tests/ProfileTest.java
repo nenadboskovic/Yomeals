@@ -11,7 +11,6 @@ public class ProfileTest extends BasicTest {
 	@Test (priority = 1)
 	public void editProfileTest() throws InterruptedException {
 		driver.get(baseUrl + "/guest-user/login-form");
-		Thread.sleep(500);
 		locationPopupPage.closePopup();
 		loginPage.login(email, password);
 		Assert.assertTrue(notificationSistemPage.getMessageText().contains("Login Successfull"), "Login ERROR");
@@ -27,7 +26,6 @@ public class ProfileTest extends BasicTest {
 	@Test (priority = 2)
 	public void changeProfileImageTest() throws InterruptedException, IOException {
 		this.driver.get(baseUrl + "/guest-user/login-form");
-		Thread.sleep(500);
 		locationPopupPage.closePopup();
 		loginPage.login(email, password);
 		Assert.assertTrue(notificationSistemPage.getMessageText().contains("Login Successfull"), "Login ERROR");
