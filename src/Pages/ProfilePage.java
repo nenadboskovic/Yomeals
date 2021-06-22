@@ -112,6 +112,7 @@ public class ProfilePage extends BasicPage {
 		this.getPhoneNo().sendKeys(phoneNo);
 		this.getZipCode().clear();
 		this.getZipCode().sendKeys(zipCode);
+		Thread.sleep(500);
 		this.getCountry().selectByVisibleText(country);
 		Thread.sleep(500);
 		this.getState().selectByVisibleText(state);
