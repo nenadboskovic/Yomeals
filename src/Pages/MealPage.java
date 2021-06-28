@@ -49,7 +49,7 @@ public class MealPage extends BasicPage {
 	public void addMeal(String qty) throws InterruptedException {
 		this.getQtyField().click();
 		this.getQtyField().sendKeys(Keys.BACK_SPACE);
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		this.getQtyField().sendKeys(qty);
 		this.getAddBtn().click();
 	}
