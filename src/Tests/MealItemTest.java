@@ -21,7 +21,9 @@ public class MealItemTest extends BasicTest {
 		locationPopupPage.closePopup();
 		mealPage.addMeal("2");
 		Assert.assertTrue(notificationSistemPage.getMessageText().contains("The Following Errors Occurred:"), "Expected notifcation ERROR");
+		
 		Assert.assertTrue(notificationSistemPage.getMessageText().contains("Please Select Location"), "Expected notifcation ERROR");
+		
 		notificationSistemPage.waitTillMssgGone();
 		locationPopupPage.getLocationForm();
 		locationPopupPage.setLocation("City Center - Albany");
@@ -37,6 +39,7 @@ public class MealItemTest extends BasicTest {
 		locationPopupPage.closePopup();
 		mealPage.setFavourite();
 		Assert.assertTrue(notificationSistemPage.getMessageText().contains("Please login first!"), "Login notifcation ERROR");
+		
 		loginPage.getLoginPage();
 		loginPage.login(email, password);
 		driver.get(baseUrl + "/meal/lobster-shrimp-chicken-quesadilla-combo");

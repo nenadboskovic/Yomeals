@@ -34,13 +34,15 @@ public class SearchTest extends BasicTest {
 
 			int actualNum = searchResultPage.getSearchResultsNum();
 			int expectedNum = (int) sheet1.getRow(i).getCell(2).getNumericCellValue();
-			Assert.assertEquals(expectedNum, actualNum);
+			Assert.assertEquals(expectedNum, actualNum, "Search results number ERROR");
 			
 			for (int j = 0; j < actualNum; j++) {
+				
 				String dataResult = sheet1.getRow(i).getCell(j + 3).getStringCellValue();
-				String atualResult = this.searchResultPage.getSearchResultsText().get(j);
+				String atualResult = searchResultPage.getSearchResultsText().get(j);
+				
 				if (dataResult != null) {
-					Assert.assertTrue(atualResult.contains(dataResult), "ERROR 2");
+					Assert.assertTrue(atualResult.contains(dataResult), "Search results ERROR");
 				}
 				
 			}
